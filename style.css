@@ -1,14 +1,18 @@
-::selection{ 
-    color: #fff;
-    background: #007bff;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f3f7fb;
 }
+
+/* =========== Quiz box main ============= */
 
 .quiz_box, .result_box {
     opacity: 1; 
     margin-bottom: 30px; 
     margin-top: 60px; 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
-   0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 22%), 0 7px 20px 0 rgb(0 0 0 / 20%);
+   
 }
 
 .quiz-image {
@@ -33,11 +37,11 @@
     margin-left: auto; 
     margin-right: auto; 
     background: #fff; 
-    border-radius: 5px; 
+    border-radius: 7px; 
     transform: scale(0.9); 
     opacity: 1; 
     pointer-events: none; 
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .quiz_box .quiz_header {
@@ -48,17 +52,16 @@
     border-radius: 5px 5px 0 0; 
     display: flex; 
     align-items: center;  
-    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.1);
 }
 
 .quiz_box .quiz_header .quiz_title {
     font-size: 20px; 
-    font-weight: 600; 
+    font-weight: 500; 
     width:90%;
 }
 
 .quiz_box .quiz_header .logo_container {
-    color: #004085; 
     background: #e9f4ff; 
     border: 1px solid #b8daff; 
     height: 45px; 
@@ -82,7 +85,7 @@ section {
     padding: 25px 30px 20px 30px; 
     background: #fff;}
 
-section .que_text {
+section .current_question {
     font-size: 19px; 
     font-weight: 600;
 }
@@ -93,14 +96,14 @@ section .option_list {
 }
 
 section .option_list .option {
-    background: aliceblue; 
-    border: 1px solid #84c5fe; 
+    background: rgb(238, 248, 255); 
+    border: 1px solid #77befc; 
     border-radius: 5px; 
     padding: 15px 15px; 
     font-size: 22px; 
-    margin-bottom: 15px; 
+    margin-bottom: 17px; 
     cursor: pointer; 
-    transition: all 0.3s ease; 
+    transition: all 0.5s ease; 
     display: flex; 
     align-items: center; 
     justify-content: space-between;
@@ -111,13 +114,13 @@ section .option_list .option:last-child {
 }
 
 section .option_list .option:hover { 
-    color: #004085; 
+    color: #0a3083; 
     background: #cce5ff; 
     border: 1px solid #b8daff;}
 
 section .option_list .option.correct { 
     color: #155724; 
-    background: #d4edda; 
+    background: #d2edd8; 
     border: 1px solid #c3e6cb;
 }
 
@@ -131,33 +134,25 @@ section .option_list .option.disabled {
     pointer-events: none;
 }
 
-section .option_list .option .icon { 
-    height: 26px; 
-    width: 26px; 
-    border: 2px solid transparent; 
-    border-radius: 50%; 
-    text-align: center; 
-    font-size: 13px; 
-    pointer-events: none; 
-    transition: all 0.3s ease; 
-    line-height: 24px;
-}
-
-.option_list .option .icon.tick {
-    color: #23903c; 
-    border-color: #23903c; 
-    background: #d4edda;
-}
-
-.option_list .option .icon.cross {
-    color: #a42834; 
-    background: #f8d7da; 
-    border-color: #a42834;
-}
-
 .letterQuiz {
     display:none;
 }
+
+.checkCorrect {
+    border:2px solid green; 
+    border-radius:20px; 
+    padding:0px 8px; 
+    font-weight:800;
+}
+
+.checkIncorrect {
+    border:2px solid #721c24; 
+    border-radius: 20px; 
+    padding: 0px 9px; 
+    font-weight:400;
+}
+
+/* ============ Quiz footer ===========*/
 
 .quiz_footer {
     height: 60px; 
@@ -168,23 +163,23 @@ section .option_list .option .icon {
     border-top: 1px solid lightgrey;
 }
 
-.quiz_footer .total_que span {
+.quiz_footer .question_counter span {
     user-select: none;
 }
 
-.quiz_footer .total_que span p {
+.quiz_footer .question_counter span p {
     font-weight: 800; 
     display:inline;
 }
 
-.quiz_footer .total_que span p:first-child {
+.quiz_footer .question_counter span p:first-child {
     padding-left: 0px;
 }
 
 .quiz_footer button {
     height: 40px; 
     padding: 0 13px; 
-    font-size: 17px; 
+    font-size: 18px; 
     font-weight: 600; 
     cursor: pointer; 
     border: none; 
@@ -197,7 +192,7 @@ section .option_list .option .icon {
     opacity: 0; 
     pointer-events: none; 
     transform: scale(0.95); 
-    transition: all 0.3s ease;}
+    transition: all 0.5s ease;}
 
 .quiz_footer button:hover { 
     background: #0263ca;
@@ -209,9 +204,12 @@ section .option_list .option .icon {
     transform: scale(1);
 }
 
+
+/* ================ Results box ==================== */
+
 .result_box { 
     background: #fff; 
-    border-radius: 5px; 
+    border-radius: 7px; 
     display: flex; 
     padding: 25px 30px; 
     max-width: 500px; 
@@ -224,7 +222,7 @@ section .option_list .option .icon {
     opacity: 0; 
     display:none; 
     pointer-events: none;  
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .icon_result {
@@ -235,21 +233,21 @@ section .option_list .option .icon {
 .result_box .complete_text { 
     font-size: 20px; 
     font-weight: 500; 
-    text-align:center; 
-    margin-bottom:15px;
+    text-align: center; 
+    margin-bottom: 15px;
 }
 
 .result_box .score_text {
     text-align: center; 
-    font-size:18px; 
-    margin-bottom:35px;
+    font-size: 18px; 
+    margin-bottom: 35px;
 }
 
 .result_box .score_text span p {
     text-align: center; 
     padding: 0 4px; 
     font-weight: 600; 
-    display:inline;
+    display: inline;
 }
 
 .result_box .buttons { 
@@ -270,32 +268,21 @@ section .option_list .option .icon {
     outline: none; 
     border-radius: 5px; 
     border: 1px solid #007bff; 
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .buttons button.restart {
     color: #fff; 
     background: #007bff; 
     background-image:linear-gradient(#0070C9, #004081);
+    transition: all 0.5s ease;
 }
 
 .buttons button.restart:hover {
     background: #0263ca;
 }
 
-.checkCorrect {
-    border:2px solid green; 
-    border-radius:20px; 
-    padding:0px 6px; 
-    font-weight:800;
-}
-
-.checkIncorrect {
-    border:2px solid #721c24; 
-    border-radius: 20px; 
-    padding: 0px 7px; 
-    font-weight:400;
-}
+/* ================ For mobile devices ==================== */
 
 @media screen and (max-width: 600px) { 
     section {
