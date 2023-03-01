@@ -1,6 +1,7 @@
 //Instructions:
 // This array holds the questions, question number, options, and answers
-// Enter the latex formula or text for the options after the span 
+// Enter the latex equation or text for the options after the span 
+// If equation requires backslash, use double backslash as JS skips through one
 
 const questions = [
   {
