@@ -5,21 +5,10 @@ const optionList = document.querySelector(".option_list");
 const questionsLine = document.querySelector(".quiz_header .questions_line");
 let widthQuizBox = (quizBox.offsetWidth)-1;
 
-window.onload = function() {myFunction1()};
-window.onscroll = function() {myFunction2()};
-
-function myFunction1(){
+function startQuiz(){
     quizBox.classList.add("activeQuiz"); //show quiz box
     showQuestions(0); //calling showQuestions function
     questionCounter(1); //passing 1 parameter to questionCounter
-}
-
-function noop(){};
-
-function myFunction2() {
-  if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-    MathJax.typeset();
-    myFunction2 = noop;}
 }
 
 let questionCount = 0;
@@ -80,7 +69,9 @@ function showQuestions(index){
     }
     
     //Render MathJax equations dynamically
-    MathJax.typeset();
+    if (index > 0 ) {
+        MathJax.typeset();
+    }
 }
 
 //When an option clicked
