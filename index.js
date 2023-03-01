@@ -30,6 +30,7 @@ restartQuiz.onclick = () => {
     showQuestions(questionCount); //calling showQuestions function
     questionCounter(questionNumber); //passing questionNumber value to questionCounter
     nextBtn.classList.remove("show"); //hide the next button
+    MathJax.typeset();
 }
 
 const nextBtn = document.querySelector(".quiz_footer .next_btn");
