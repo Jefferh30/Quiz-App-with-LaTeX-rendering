@@ -6,18 +6,73 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo.png">
   <link rel="stylesheet" href="./style.css">
-  <script src="./index.js" defer></script>
+
+  <!-- This file contains Questions and Options only -->
+  <script src="js/questions.js"></script>
+  
+  <!-- Quiz Code -->
+  <script src="js/index.js"></script>
+  
+  <!-- Configuration for MathJax inline rendering-->
+  <script>
+    MathJax = { 
+      tex: {
+        inlineMath: [['$latex', '$'], ['\\(', '\\)']]
+      },
+    };
+    </script>
+  
+  <!-- Importing MathJax-->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-chtml.js"></script>
   
   <title>Quiz App with LaTeX rendering</title>
 
 </head>
 <body>
-  <main>
-    
-  </main>
-  <footer>
-    
-  </footer>
+  <noscript>
+    You need to enable JavaScript to use this app
+  </noscript>
+  <!-- Quiz Box -->
+  <div class="quiz_box">
+    <header class="quiz_header">
+        <h1 class="quiz_title">Práctica de método de eliminación</h1>
+        <div class="logo_container">
+            <img src="./assets/logo.png" width="40px">
+        </div>
+        <div class="questions_line"></div>
+    </header>
+    <main>
+        <div class="current_question">
+            <!-- Current question inserted here -->
+        </div>
+        <div class="option_list">
+            <!-- Question options inserted here -->
+        </div>
+    </main>
+
+    <!-- Quiz box footer-->
+    <footer class="quiz_footer">
+        <div class="question_counter">
+            <!-- Question counter inserted here -->
+        </div>
+        <button class="next_btn">Next</button>
+    </footer>
+  </div>
+
+<!-- Result Box -->
+  <section class="result_box">
+    <div class="icon_result">
+        <img src="./assets/well-done-animation.gif" alt="well-done-animation"width="150" style="vertical-align:middle;margin:50px 50px">
+    </div>
+    <div class="complete_text">You have completed the quiz!</div>
+    <div class="score_text">
+        <!-- Score result inserted here -->
+    </div>
+    <div class="buttons">
+        <button class="restart">Try again</button>
+    </div>
+  </section>
   
 </body>
 </html>
