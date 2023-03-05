@@ -17,13 +17,24 @@ This is an interactive quiz app with LaTeX rendering, perfect for including in w
 ## Overview
 
 ## Instructions
-1. This app requires [https://www.mathjax.org/#gettingstarted](MathJax) to render LaTeX
+1. This app requires [MathJax](https://www.mathjax.org/#gettingstarted) to render LaTeX
 
 2. questions.js holds the questions, question number, options, and answers
 
-3. Inline equations can be rendered by enclosing them with $latex $ or \\(  \\). For example, $latex x+5$ or \\(x+5\\)
+3. Inline equations can be rendered by enclosing them in the following way:  
 
-4. For equations that require backslash, i.e. $latex \frac{1}{2}$, use two backslashes in each instance as JS skips over one. Examples: $latex \\frac{1}{2}$, $latex \\int f(x) dx$.
+```js
+$latex x+5$ 
+//or 
+\\(x+5\\)
+```
+
+4. For equations that require backslash, use two backslashes in each instance as JS skips over one. Examples: 
+
+```js
+$latex \\frac{1}{2}$ 
+$latex \\int f(x) dx$
+```
 
 ### Screenshot
 
